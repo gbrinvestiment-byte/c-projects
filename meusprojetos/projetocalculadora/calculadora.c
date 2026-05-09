@@ -1,9 +1,46 @@
 #include <stdio.h> 
 
-int main () {
-
-    int opcao;
+void calcular(int opcao){
     double valor1, valor2, resultado;
+        // entrada dos valores do usuário
+        printf("\nDigite o primeiro valor: ");
+        scanf("%lf", &valor1);
+        printf("Digite o segundo valor: ");
+        scanf("%lf", &valor2);
+
+
+            switch (opcao) {
+            case 1:
+                // somando valores colhidos do usuário
+                resultado = valor1 + valor2;
+                printf("A soma dos números é: %.2lf\n", resultado);
+                break;
+            case 2:
+                // subtraindo valores colhidos do usuário
+                resultado = valor1 - valor2;
+                printf("A subtração dos números é: %.2lf\n", resultado);
+                break;
+            case 3:
+                // multiplicando valores colhidos do usuário
+                resultado = valor1 * valor2;
+                printf("A multiplicação dos números é: %.2lf\n", resultado);
+                break;
+            case 4:
+                // dividindo valores colhidos do usuário
+                if (valor2 == 0) {
+                    printf("Erro: divisão por zero!\n");
+                } else {
+                    resultado = valor1 / valor2;
+                    printf("A divisão dos números é: %.2lf\n", resultado);
+                }
+                break;
+            default:
+                printf("\nOpção inválida!\n");
+            }
+        }
+
+int main () {
+    int opcao;
 
     do {
         // imprime o menu da calculadora para o usuário
@@ -19,94 +56,13 @@ int main () {
         printf("Opção: ");
         scanf("%d", &opcao);
 
-        // usando estrutura de decisão switch para o menu
-        switch (opcao) {
-            case 1:
-                // entrada dos valores do usuário
-                printf("\nDigite o primeiro valor: \n");
-                scanf("%lf", &valor1);
-                printf("Digite o segundo valor: \n");
-                scanf("%lf", &valor2);
 
-                // somando valores colhidos do usuário
-                resultado = valor1 + valor2;
-                printf("A soma dos números é: %.2lf\n", resultado);
-                break;
-            case 2:
-                // entrada dos valores do usuário
-                printf("\nDigite o primeiro valor: \n");
-                scanf("%lf", &valor1);
-                printf("Digite o segundo valor: \n");
-                scanf("%lf", &valor2);
-
-                // subtraindo valores colhidos do usuário
-                resultado = valor1 - valor2;
-                printf("A subtração dos números é: %.2lf\n", resultado);
-                break;
-            case 3:
-                // entrada dos valores do usuário
-                printf("\nDigite o primeiro valor: \n");
-                scanf("%lf", &valor1);
-                printf("Digite o segundo valor: \n");
-                scanf("%lf", &valor2);
-
-<<<<<<< HEAD
-                // multiplicando valores colhidos do usuário
-                resultado = valor1 * valor2;
-                printf("A multiplicação dos números é: %.2lf\n", resultado);
-                break;
-            case 4:
-                // entrada dos valores do usuário
-                printf("\nDigite o primeiro valor: \n");
-                scanf("%lf", &valor1);
-                printf("Digite o segundo valor: \n");
-                scanf("%lf", &valor2);
-
-                // dividindo valores colhidos do usuário
-                if (valor2 == 0) {
-                    printf("Erro: divisão por zero!\n");
-                } else {
-                    resultado = valor1 / valor2;
-                    printf("A divisão dos números é: %.2lf\n", resultado);
-                }
-                break;
-            case 0:
-                // encerra o programa
-                printf("\nSaindo do programa...\n");
-                break;
-            default:
-                printf("\nOpção inválida!\n");
+            if (opcao != 0) {
+            calcular(opcao);
         }
+
     } while (opcao != 0); // repete enquanto o usuário não digitar 0
-
+    printf("\nSaindo do programa...\n");
+    
     return 0;
-=======
-            // multiplicando valores colhidos do usuário
-            resultado = valor1 * valor2;
-            printf("A multiplicação dos números é: %.2lf\n", resultado);
-            break;
-        case 4:
-            // entrada dos valores do usuário
-            printf("\nDigite o primeiro valor: \n");
-            scanf("%lf", &valor1);
-            printf("Digite o segundo valor: \n");
-            scanf("%lf", &valor2);
-
-            // dividindo valores colhidos do usuário
-            if (valor2 == 0) {
-                printf("Erro: divisão por zero!\n");
-            } else {
-                resultado = valor1 / valor2;
-                printf("A divisão dos números é: %.2lf\n", resultado);
-            }
-            break;
-        case 0:
-            // encerra o programa
-            printf("\nSaindo do programa...\n");
-            return 1;
-        default:
-            printf("\nOpção inválida!\n");
-    }
->>>>>>> 372cb0225c392202f161e7c43bec0f477ed4e402
-
-}
+} 
