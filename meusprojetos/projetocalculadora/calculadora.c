@@ -51,7 +51,7 @@ int main () {
 
             // multiplicando valores colhidos do usuário
             resultado = valor1 * valor2;
-            printf("A soma dos números é: %.2lf\n", resultado);
+            printf("A multiplicação dos números é: %.2lf\n", resultado);
             break;
         case 4:
             // entrada dos valores do usuário
@@ -61,8 +61,12 @@ int main () {
             scanf("%lf", &valor2);
 
             // dividindo valores colhidos do usuário
-            resultado = valor1 / valor2;
-            printf("A soma dos números é: %.2lf\n", resultado);
+            if (valor2 == 0) {
+                printf("Erro: divisão por zero!\n");
+            } else {
+                resultado = valor1 / valor2;
+                printf("A divisão dos números é: %.2lf\n", resultado);
+            }
             break;
         case 0:
             // encerra o programa
