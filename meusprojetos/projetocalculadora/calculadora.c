@@ -1,6 +1,14 @@
 #include <stdio.h> 
 #include <stdlib.h>
 
+char historico[10][100]; // array para guardar até 10 operações
+int operacoes = 0;
+
+void pausar() {
+    printf("\n Pressione ENTER para continuar... \n");
+    getchar();
+    getchar();
+}
 void calcular(int opcao){
     double valor1, valor2, resultado;
         // entrada dos valores do usuário
@@ -15,16 +23,31 @@ void calcular(int opcao){
                 // somando valores colhidos do usuário
                 resultado = valor1 + valor2;
                 printf("A soma dos números é: %.2lf\n", resultado);
+
+                sprintf(historico[operacoes], "%.2lf + %.2lf = %.2lf", valor1, valor2, resultado);
+                operacoes++;
+                pausar();
+
                 break;
             case 2:
                 // subtraindo valores colhidos do usuário
                 resultado = valor1 - valor2;
                 printf("A subtração dos números é: %.2lf\n", resultado);
+
+                sprintf(historico[operacoes], "%.2lf - %.2lf = %.2lf", valor1, valor2, resultado);
+                operacoes++;
+                pausar();
+
                 break;
             case 3:
                 // multiplicando valores colhidos do usuário
                 resultado = valor1 * valor2;
                 printf("A multiplicação dos números é: %.2lf\n", resultado);
+
+                sprintf(historico[operacoes], "%.2lf * %.2lf = %.2lf", valor1, valor2, resultado);
+                operacoes++;
+                pausar();
+
                 break;
             case 4:
                 // dividindo valores colhidos do usuário
@@ -33,6 +56,10 @@ void calcular(int opcao){
                 } else {
                     resultado = valor1 / valor2;
                     printf("A divisão dos números é: %.2lf\n", resultado);
+
+                    sprintf(historico[operacoes], "%.2lf / %.2lf = %.2lf", valor1, valor2, resultado);
+                    operacoes++;
+                    pausar();
                 }
                 break;
             default:
@@ -54,6 +81,7 @@ int main () {
         printf("2. Subtração\n");
         printf("3. Multiplicação\n");
         printf("4. Divisão\n");
+        printf("5. Histórico\n");
         printf("0. Sair do programa\n");
         printf("Opção: ");
         scanf("%d", &opcao);
@@ -61,8 +89,16 @@ int main () {
 
         if (opcao >= 1 && opcao <= 4) {
             calcular(opcao);  // só chama se a opção for válida
-        } else if (opcao != 0) {
+        } else if (opcao != 0 && opcao != 5) {
             printf("\nOpção inválida!\n");  
+        }
+        
+        if (opcao == 5) {
+            for (int i = 0; i < operacoes; i++)
+            {
+                printf("\n %s ", historico[i]);
+            }
+           pausar();
         }
 
 
