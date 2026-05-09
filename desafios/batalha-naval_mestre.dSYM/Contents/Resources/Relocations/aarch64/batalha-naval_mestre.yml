@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     batalha-naval_mestre
+relocations:     []
+...

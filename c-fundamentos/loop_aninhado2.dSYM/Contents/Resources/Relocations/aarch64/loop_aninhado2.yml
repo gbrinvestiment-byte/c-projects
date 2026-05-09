@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     loop_aninhado2
+relocations:     []
+...
