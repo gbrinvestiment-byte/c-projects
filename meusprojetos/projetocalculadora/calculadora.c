@@ -50,6 +50,7 @@ int main () {
                 printf("Digite o segundo valor: \n");
                 scanf("%lf", &valor2);
 
+<<<<<<< HEAD
                 // multiplicando valores colhidos do usuário
                 resultado = valor1 * valor2;
                 printf("A multiplicação dos números é: %.2lf\n", resultado);
@@ -79,5 +80,33 @@ int main () {
     } while (opcao != 0); // repete enquanto o usuário não digitar 0
 
     return 0;
+=======
+            // multiplicando valores colhidos do usuário
+            resultado = valor1 * valor2;
+            printf("A multiplicação dos números é: %.2lf\n", resultado);
+            break;
+        case 4:
+            // entrada dos valores do usuário
+            printf("\nDigite o primeiro valor: \n");
+            scanf("%lf", &valor1);
+            printf("Digite o segundo valor: \n");
+            scanf("%lf", &valor2);
+
+            // dividindo valores colhidos do usuário
+            if (valor2 == 0) {
+                printf("Erro: divisão por zero!\n");
+            } else {
+                resultado = valor1 / valor2;
+                printf("A divisão dos números é: %.2lf\n", resultado);
+            }
+            break;
+        case 0:
+            // encerra o programa
+            printf("\nSaindo do programa...\n");
+            return 1;
+        default:
+            printf("\nOpção inválida!\n");
+    }
+>>>>>>> 372cb0225c392202f161e7c43bec0f477ed4e402
 
 }
