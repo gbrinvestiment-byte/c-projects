@@ -1,4 +1,5 @@
 #include <stdio.h> 
+#include <stdlib.h>
 
 void calcular(int opcao){
     double valor1, valor2, resultado;
@@ -43,6 +44,7 @@ int main () {
     int opcao;
 
     do {
+        system("clear"); // limpa a tela antes de mostrar o menu
         // imprime o menu da calculadora para o usuário
         printf("\n\n===================================\n");
         printf("|           CALCULADORA           |\n");
@@ -57,12 +59,15 @@ int main () {
         scanf("%d", &opcao);
 
 
-            if (opcao != 0) {
-            calcular(opcao);
+        if (opcao >= 1 && opcao <= 4) {
+            calcular(opcao);  // só chama se a opção for válida
+        } else if (opcao != 0) {
+            printf("\nOpção inválida!\n");  
         }
+
 
     } while (opcao != 0); // repete enquanto o usuário não digitar 0
     printf("\nSaindo do programa...\n");
-    
+
     return 0;
 } 
